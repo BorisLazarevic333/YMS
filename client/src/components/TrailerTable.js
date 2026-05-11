@@ -19,11 +19,14 @@ function TrailerTable() {
     const token = localStorage.getItem("token");
     if (!token && !isGuest) return;
 
-    const res = await axios.get("http://localhost:5000/api/trailers", {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const res = await axios.get(
+      `${process.env.REACT_APP_API_URL}/api/trailers`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
-    });
+    );
 
     setTrailers(res.data);
   };
@@ -71,7 +74,7 @@ function TrailerTable() {
     const token = localStorage.getItem("token");
 
     await axios.put(
-      `http://localhost:5000/api/trailers/outgate/${id}`,
+      `${process.env.REACT_APP_API_URL}/api/trailers/outgate/${id}`,
       {},
       {
         headers: {

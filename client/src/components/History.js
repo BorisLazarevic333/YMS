@@ -16,7 +16,7 @@ const handleDelete = async (id) => {
   const confirmDelete = window.confirm("Delete this record?");
   if (!confirmDelete) return;
 
-  await axios.delete(`http://localhost:5000/api/trailers/${id}`, {
+  await axios.delete(`${process.env.REACT_APP_API_URL}/api/trailers${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -44,11 +44,14 @@ function History() {
   const fetchHistory = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await axios.get("http://localhost:5000/api/trailers/history", {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const res = await axios.get(
+      `${process.env.REACT_APP_API_URL}/api/trailers`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
-    });
+    );
 
     setData(res.data);
   };

@@ -45,7 +45,7 @@ function IngateForm() {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:5000/api/trailers/ingate",
+        `${process.env.REACT_APP_API_URL}/api/trailers/ingate`,
         {
           ...form,
           trailerNumber: noTrailer ? null : form.trailerNumber,
