@@ -37,6 +37,18 @@ Backend:
 
 ---
 
+## Instructions
+
+In the root folder cmd:
+-npm start
+To get the MongoDB server running
+
+In the client folder cmd:
+-npm start
+To run the front-end and see the live changes you make
+
+---
+
 ## Author
 
 Boris Lazarević
