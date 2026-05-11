@@ -22,11 +22,14 @@ function Dashboard() {
   const fetchData = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await axios.get("http://localhost:5000/api/trailers/history", {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const res = await axios.get(
+      `${process.env.REACT_APP_API_URL}/api/trailers/history`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
-    });
+    );
 
     setTrailers(res.data);
   };
