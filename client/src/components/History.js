@@ -45,7 +45,7 @@ function History() {
     const token = localStorage.getItem("token");
 
     const res = await axios.get(
-      `${process.env.REACT_APP_API_URL}/api/trailers`,
+      `${process.env.REACT_APP_API_URL}/api/trailers/history`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
