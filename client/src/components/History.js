@@ -84,8 +84,9 @@ function History() {
 
     // SORT
     .sort((a, b) => {
-      const dateA = new Date(a.ingateTime);
-      const dateB = new Date(b.ingateTime);
+      const dateA = new Date(a.outgateTime || a.ingateTime);
+
+      const dateB = new Date(b.outgateTime || b.ingateTime);
 
       return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
     });
