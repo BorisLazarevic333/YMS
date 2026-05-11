@@ -16,7 +16,7 @@ const handleDelete = async (id) => {
   const confirmDelete = window.confirm("Delete this record?");
   if (!confirmDelete) return;
 
-  await axios.delete(`${process.env.REACT_APP_API_URL}/api/trailers${id}`, {
+  await axios.delete(`${process.env.REACT_APP_API_URL}/api/trailers/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
