@@ -6,7 +6,12 @@ require("dotenv").config();
 const app = express();
 
 // middlewware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://yms-chi.vercel.app",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 // routes
