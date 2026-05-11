@@ -210,6 +210,7 @@ function History() {
                 <th className="p-2 text-left">Type</th>
                 <th className="p-2 text-left">Status</th>
                 <th className="p-2 text-left">Ingate Time</th>
+                <th className="p-2 text-left">Outgate Time</th>
                 {user?.role === "admin" && (
                   <th className="p-2 text-left">Action</th>
                 )}
@@ -242,6 +243,12 @@ function History() {
 
                   <td className="p-2">
                     {new Date(t.ingateTime).toLocaleString()}
+                  </td>
+
+                  <td className="p-2">
+                    {t.outgateTime
+                      ? new Date(t.outgateTime).toLocaleString()
+                      : "/"}
                   </td>
                   {user?.role === "admin" && (
                     <td className="p-2">
